@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+            <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+    </head>
+    <body>
+        <a-scene >
+
+        <a-assets>
+            <img id="minishell" crossorigin="anonymous" src="https://64.media.tumblr.com/469116003a6143bff7d019f6db5474be/b3948a38a5af092a-42/s1280x1920/9e9163d011ffc25a9532eb25e56cac70492d54bb.png">
+            <img id="game1" crossorigin="anonymous" src="https://64.media.tumblr.com/6b29a4ec6f999c9f5f1a73e9f82242ee/eb9cb8fb0eff7341-d8/s1280x1920/9931b6dd408ab02abc5385eb06b1ca97f8d7ae82.png">
+            <img id="game2" crossorigin="anonymous" src="https://64.media.tumblr.com/bdf13aa1d66084c63b15c33e5f1679e9/247cce7d554b8e4c-6c/s1280x1920/f936bde5ed40a58d12f6e8d9c592701e138bff95.png">
+            <img id="game3" crossorigin="anonymous" src="https://64.media.tumblr.com/d9942848ee23e870dbfb986ef9fbb117/a82825f1db8d0072-6d/s540x810/6271e0ebbee29ac920f7aed40d6327a4ef0723dc.png">
+            <img id="game4" crossorigin="anonymous" src="https://64.media.tumblr.com/3b07b4208363f2f34bde504d43be5cac/28c8aeda080dbec2-c5/s1280x1920/297f4df8cd4df7416be393dec61209ab623c03ba.png">
+            <img id="game5" crossorigin="anonymous" src="https://64.media.tumblr.com/735517c3acde3a892a1af0234e4057ba/3a486cfbe3c7ae87-eb/s1280x1920/8230d389a4c43c9749c20ec91356a4bf978a47b3.png">
+            <img id="rt" crossorigin="anonymous" src="https://64.media.tumblr.com/156870f52287d7d4c25d528cfff19d6d/3984b8d4d121ead9-a2/s1280x1920/f4dd308608294f9968afde9170c1657dcf9690a0.jpg">
+            <img id="printf" crossorigin="anonymous" src="https://64.media.tumblr.com/09b7e194ad8ebab12a88a95814eb5145/64c4c21e558f8bc8-07/s540x810/9b42e4b2f4cc269146dd7b18e560772198784794.png">
+            <img id="AFM" crossorigin="anonymous" src="https://64.media.tumblr.com/8f049fbe535f5bbb9e6d430911e6191e/d51c76701a274689-d5/s1280x1920/6fcf9c594a9e64772fb7f5e5d0484ad507e2c360.jpg">
+            <img id="seg" crossorigin="anonymous" src="https://64.media.tumblr.com/a1beb15f2d340f258bc7058619a38427/a15c20bdb241e9e1-eb/s1280x1920/988bd449de95074e788a55d5eb58f4e076f3f223.png">
+            <img id="gameth" crossorigin="anonymous" src="https://64.media.tumblr.com/144dcddb87edf96ac196ab747d75b7f3/076749e34948584e-80/s1280x1920/fad357515fcecc734b625381bcc9e84f504817e1.png">
+            <img id="com1" crossorigin="anonymous" src="https://64.media.tumblr.com/65c3481132c41f5422af12c818979fc7/86fc4e35c2f81256-27/s1280x1920/538804b4759c238b90cddedef3861acb52ccc136.jpg">
+            <img id="com2" crossorigin="anonymous" src="https://64.media.tumblr.com/6f351d9620466de6f387ff1afc2a2f5e/2d31d612c80ac834-d7/s1280x1920/269b83629b755ce5a0ff5ec11bddc18175fd99ea.jpg">
+            <img id="com3" crossorigin="anonymous" src="https://64.media.tumblr.com/11e92dcdffc644b56ef415425320e37f/0b5686e45c67605b-9b/s1280x1920/4ed0b5553c5241ba92ff6ad3e6dd178b906dcb49.jpg">
+            <img id="if" crossorigin="anonymous" src="https://64.media.tumblr.com/990f70910b3b452f73efbf6265cfc591/3b98aa0f4aa1c26d-f2/s1280x1920/00cb4b3f508bbe104163422552683e1aad9b8e44.jpg">
+        </a-assets>
+            <a-camera position = "0 1 0">
+                
+                <a-entity
+                light="type: spot; intensity: 1; color: #1d1aff; angle: 5;  penumbra: 0.8"
+                    position="0 0 0"
+                    ></a-entity>
+                <a-entity cursor position="0 0 -1"
+                        geometry="primitive: sphere; radius: 0.001"
+                        material="color: #ffffff; emissive: #ffffff; opacity: 0.5"></a-entity>
+        </a-camera>
+        <!-- Plan du bas-->
+            <a-plane 
+            color="#ffffff"
+            rotation="-90 0 0"
+            scale="1000 1000 1"
+            position="0 -50 -20">
+        </a-plane>
+
+        
+        <!-- ciel-->
+        <a-sky material="color: #000000"></a-sky>
+        <!-- Plan de gauche-->
+        <a-plane 
+        color="#ffffff"
+        rotation="0 90 0"
+        scale="10000 10000 1"
+        position="-300 -2 -100">
+        
+        </a-plane>
+        <!-- Plan de droite-->
+        <a-plane 
+        color= "#ffffff"
+        rotation="0 -90 0"
+        scale="10000 10000 1"
+        position="300 -2 -100">
+        </a-plane>
+        <!-- Plan du fond-->
+        <a-plane 
+        color= "#ffffff"
+        rotation="0 0 0"
+        scale="10000 10000 1"
+        position="0 -2 -300">
+        </a-plane>
+
+        <!-- Plan de transition-->
+        <a-plane 
+        id="trans"
+        color= "#ffffff"
+        rotation="0 0 0"
+        scale="10000 10000 1"
+        position="0 -2 -5">
+        </a-plane>
+        <!-- Intro-->
+        <a-entity
+        id="intro"
+        material="color: #000000; emissive: #000000; opacity: 0"
+          position="0 2 -4"
+          geometry="primitive: plane; width: 5; height: auto"
+          text="color: #8cff00; width: 5 ;font: monoid;
+                value:  bonjour ami.\ncommencons?"
+        shadow="cast: true"
+            event-set__enter="_event: mouseenter; text.value: hello friend.\nshall we start?"
+            event-set__leave="_event: mouseleave; text.value: bonjour ami.\ncommencons?" 
+            >
+        </a-entity>
+        <a-entity        
+        material="color: #000000; emissive: #000000; opacity: 0"
+        position="1 1.5 -4"
+        geometry="primitive: plane; width: 1; height: auto"
+        text="color: #8cff00; align: center; width:5 ;font: monoid;
+              value: ______
+                    | >   |
+                    –------
+           "
+        event-set__tarcol="_event: click; _target: #trans; position: 0 0 -18"
+        event-set__dis="_event: click; _target: #intro; visible: false"
+        event-set__diss="_event: click;  visible: false"
+        >
+
+        </a-entity>
+        <!-- Bio-->
+        
+        <a-entity 
+        id="bio"
+        material="color: #000000; emissive: #000000; opacity: 0"
+          position="4 3 -15"
+          geometry="primitive: plane; width: 5; height: auto"
+          text="color: #8cff00; width: 5 ;font: monoid;
+                value: bonjour! je m'appelle ines.\nj'ai 23 ans.
+                 je suis nee et grandit a l'ile de la reunion en plein ocean indien.\n 
+                 je suis actuellement basee entre paris et la reunion mais voyageuse dans l'ame, je suis prete a l'aventure.
+                 je recherche actuellement un stage de 6 mois pour septembre 2021.  "
+                 event-set__enter="_event: mouseenter; text.value: hello! my name is ines.\n i am 23 yo.\n I was born in reunion island lost in the indian ocean.\ncurrently based between reunion and paris nonetheless i am ready for adventures. i am actually looking for an internship for septembre 2021."
+                 event-set__leave="_event: mouseleave; text.value: bonjour! je m'appelle ines.\nj'ai 23 ans.
+                 je suis nee et grandit a l'ile de la reunion en plein ocean indien.\n 
+                 je suis actuellement basee entre paris et la reunion mais voyageuse dans l'ame, je suis prete a l'aventure.
+                 je recherche actuellement un stage de 6 mois pour septembre 2021. " 
+              >
+        </a-entity>
+        
+        <a-entity        
+        material="color: #000000; emissive: #000000; opacity: 0"
+        position="4.607 0 -15"
+        geometry="primitive: plane; width: 1; height: auto"
+        text="color: #8cff00; align: center; width:5 ;font: monoid;
+        value: ______
+              | >   |
+              –------
+"
+        event-set__tarcolutc="_event: click; _target: #trans; position: 0 0 -32"
+        event-set__dis="_event: click; _target: #bio; visible: false"
+        event-set__diss="_event: click;  visible: false"
+        > </a-entity>
+<!-- Ecole-->
+        <a-entity
+        id="utc"
+        material="color: #000000; emissive: #000000; opacity: 0"
+          position="-4 2 -30"
+          geometry="primitive: plane; width: 5; height: auto"
+          text="color: #8cff00; width: 5 ;font: monoid;
+                value: UTC: universite de technologie de compiegne.\n type: ecole d'ingenieur \ndate: 2015 - auj.\n
+                diplome: ingenieur biologique/biomedical\n
+
+                mineur: phiteco (philosphie, technologies et cognition) & tcn (technologies culturelles numeriques).\n 
+                domaine: biologie, mathematique, informatique, electronique
+                "
+        event-set__enter="_event: mouseenter; text.value: utc : universite de technologie de compiegne\n type: engineering university.\nperiod: 2015 - today.\ndegree: biology/biomedical engineer.\n\n minor: phiteco (philosophy, technologies and cognition) & tcn (digital cultural technologies).\n\n fields: biology, maths, computer science, electronics."
+        event-set__leave="_event: mouseleave; text.value: utc: universite de technologie de compiegne.\n type: ecole d'ingenieur \ndate: 2015 - auj.\n
+        diplome: ingenieur biologique/biomedical\nmineur: phiteco (philosphie, technologies et cognition) & tcn (technologies culturelles numeriques).\n 
+        domaine: biologie, mathematique, informatique, electronique">
+        </a-entity>
+     
+        
+        <a-entity
+        id="qd"
+        material="color: #000000; emissive: #000000; opacity: 0"
+          position="4 2 -29"
+          geometry="primitive: plane; width: 5; height: auto"
+          text="color: #8cff00; width: 5 ;font: monoid;
+                value: Ecole 42\n type: ecole alternative peer to peer.
+                date: 2020 - auj \n\n diplome: architechte en technologie numerique 
+                \n\n domaine: informatique, innovation, entreprenariat 
+                    "
+        event-set__enter="_event: mouseenter; text.value: 42 school\n type: alternative school peer to peer.\nperiod: 2020 - today \n \n \n degree: technologic numeric designer\n\n fields: computer science, innovation,entrepreneurship\n"
+        event-set__leave="_event: mouseleave; text.value:Ecole 42\n type: ecole alternative peer to peer.
+        date: 2020 - auj \n\n diplome: architechte en technologie numerique 
+        \n\n domaine: informatique, innovation, entreprenariat 
+            "></a-entity>
+
+    
+            <a-entity        
+            material="color: #000000; emissive: #000000; opacity: 0"
+            position="3.270 -0.142 -30"
+            geometry="primitive: plane; width: 1; height: auto"
+            text="color: #8cff00; align: center; width:5 ;font: monoid;
+            value: ______
+                  | >   |
+                  –------                   
+               "
+            event-set__tarcolutc="_event: click; _target: #utc; visible: false"
+            event-set__tarcolqd="_event: click; _target: #qd; visible: false"
+            event-set__dis="_event: click; _target: #trans; position: -5 2.906 -38"
+            event-set__diss="_event: click;  visible: false"
+            ></a-entity>
+        <!-- Projet-->
+        
+
+            <!-- Coding-->
+        <a-entity id="computer">
+
+       
+        <a-entity
+        id="prog"
+
+        material="color: #000000; emissive: #000000; opacity: 1"
+        position="-5 2.906 -35"
+        geometry="primitive: plane; width: 5; height: 1"
+        text="color: #8cff00; align: center; width: 5 ;font: monoid;
+        value: Informatique"
+        event-set__enter="_event: mouseenter; text.value: Computer Science"
+        event-set__leave="_event: mouseleave; text.value: Informatique" ></a-entity>
+        <a-entity
+        
+        position="-5 1 -35">
+        <a-image src="#minishell" position="0 0 0" width="3" height="2.25" ></a-image>
+        <a-entity
+        material="color: #000000; emissive: #000000; opacity: 0"
+        geometry="primitive: plane; width: auto; height: auto"
+        position ="0 -1 0"
+        text="color: #8cff00; width: 5 ;font: monoid;
+                value: coder un minishell en langage c (en cours)
+                    "
+        event-set__enter="_event: mouseenter; text.value: program a minishell in C (on going)"
+        event-set__leave="_event: mouseleave; text.value: coder un minishell en langage c (en cours) " ></a-entity>
+    </a-entity>
+    <a-entity
+
+    position="0 1 -35"
+    >
+
+    <a-image src="#game1" animation="property: rotation; to: 0 360 0; loop: true; dur: 30000" position="-1.423 0.521 -0.754" width="3" height="2.25" ></a-image>
+    <a-image src="#game2" animation="property: rotation; to: 0 360 0; loop: true; dur: 30000" position="0 2.800 -0.754"  width="3" height="1.6" ></a-image>
+    <a-image src="#game3" animation="property: rotation; to: 0 360 0; loop: true; dur: 30000" position="1.864 0 -0.756"  width="3" height="1.2" ></a-image>
+    
+    <a-entity
+    material="color: #000000; emissive: #000000; opacity: 0"
+    geometry="primitive: plane; width: auto; height: auto"
+    position ="0 -1 0"
+    text="color: #8cff00; width: 5 ;font: monoid;
+            value: mon premier jeu sur unity. Walkthrough un univers marin eclectique. (10 jours)
+                "
+                event-set__enter="_event: mouseenter; text.value: my first game in unity. walkthrough under the sea (10 days)"
+                event-set__leave="_event: mouseleave; text.value: mon premier jeu sur unity. Walkthrough un univers marin eclectique. (10 jours) "
+                ></a-entity>
+            </a-entity>
+        <a-entity
+        
+    position="7 1 -35"
+    >
+
+    <a-image src="#game4" animation="property: rotation; to: 0 360 0; loop: true; dur: 30000" position="-1.423 0.521 -0.754" width="3" height="2.25" ></a-image>
+    <a-image src="#game5" animation="property: rotation; to: 0 360 0; loop: true; dur: 30000" position="0 2.800 -0.754"  width="3" height="1.6" ></a-image>
+    <a-entity
+    position ="0 -1 0"
+    material="color: #000000; emissive: #000000; opacity: 0"
+    geometry="primitive: plane; width: auto; height: auto"
+    text="color: #8cff00; width: 5 ;font: monoid;
+            value: mon deuxieme jeu sur unity. reproduire un argon assault (en cours)
+                "
+    event-set__enter="_event: mouseenter; text.value: my second game in unity. remake a argon assault;"
+    event-set__leave="_event: mouseleave; text.value: mon deuxieme jeu sur unity. reproduire un argon assault (en cours) "
+    ></a-entity>
+    ></a-entity>
+
+<a-entity
+
+position="13 1 -35">
+<a-image position="0 1 0" src="#rt" position="0 0 0" width="4" height="3.2" ></a-image>
+<a-entity
+material="color: #000000; emissive: #000000; opacity: 0"
+    geometry="primitive: plane; width: auto; height: auto"
+position ="0 -1 0"
+text="color: #8cff00; width: 5 ;font: monoid;
+
+        value: coder un logiciel de raytracing en langage c
+            "
+event-set__enter="_event: mouseenter; text.value: design a raytracing software in c"
+event-set__leave="_event: mouseleave; text.value: coder un logiciel de raytracing en langage c "></a-entity>
+</a-entity>
+
+<a-entity
+
+position="18 1 -35">
+<a-image position="0 1 0" src="#printf" position="0 0 0" width="4" height="0.5" ></a-image>
+<a-entity
+position ="0 -1 0"
+material="color: #000000; emissive: #000000; opacity: 0"
+    geometry="primitive: plane; width: auto; height: auto"
+text="color: #8cff00; width: 5 ;font: monoid;
+        value: recoder printf en langage C
+            "
+            event-set__enter="_event: mouseenter; text.value: make your own printf in c"
+            event-set__leave="_event: mouseleave; text.value: recoder printf en langage c "></a-entity>
+</a-entity>
+</a-entity>
+<a-entity        
+material="color: #000000; emissive: #000000; opacity: 0"
+position="22 1 -35"
+scale="2 2 2"
+geometry="primitive: plane; width: 1; height: auto"
+text="color: #8cff00; align: center; width:5 ;font: monoid;
+value: ______
+      | >   |
+      –------                   
+   "
+event-set__tarcolutc="_event: click; _target: #computer; visible: false"
+
+event-set__dis="_event: click; _target: #trans; position: -5 2.906 -48"
+event-set__diss="_event: click;  visible: false"
+></a-entity>
+        
+    <!--Biolgy-->
+    <a-entity id="biopro">
+    <a-entity
+    id="biology"
+    
+    material="color: #000000; emissive: #000000; opacity: 0"
+    position="-5 2.906 -45"
+    geometry="primitive: plane; width: 5; height: auto"
+    text="color: #8cff00;  width: 5 ;font: monoid;
+    value: biologie"
+    event-set__enter="_event: mouseenter; text.value: biology"
+    event-set__leave="_event: mouseleave; text.value: biologie" 
+        ></a-entity>
+    
+        <a-entity
+        
+        position="-5 1 -45">
+        <a-image src="#AFM" position="0 0 0" width="3" height="2.25" ></a-image>
+        <a-entity
+        material="color: #000000; emissive: #000000; opacity: 0"
+        geometry="primitive: plane; width: auto; height: auto"
+        position ="-4 0 0"
+        text="color: #8cff00; width: 5 ;font: monoid;
+                value: stage 6 mois \n city university of new york.\n
+                etude topographique et mecanique de l'ossature de patients atteints de l'ostheoporose \na l'echelle nanoscopique.\n
+                utilisation de l'afm (microscope a force atomique), sem (scanning electron microscopy), impression 3d.
+                    "
+        event-set__enter="_event: mouseenter; text.value: 6 months internship\n city university of new york\n topography and mechanic study of bones with osteoporosis\n at the nanoscale.\n
+        use of afm (atomic force microscop), sem (scanning electron miscroscop) and 3d impression"
+        event-set__leave="_event: mouseleave; text.value: stage 6 mois \n city university of new york.\n
+        etude topographique et mecanique de l'ossature de patients atteints de l'ostheoporose \na l'echelle nanoscopique.\n
+        utilisation de l'afm (microscope a force atomique), sem (scanning electron microscopy), impression 3d.
+           "></a-entity>
+        </a-entity>
+    <a-entity
+        position="0 1 -45">
+        <a-entity
+        material="color: #000000; emissive: #000000; opacity: 0"
+        geometry="primitive: plane; width: auto; height: auto"
+        position ="0 0 0"
+         text="color: #8cff00; width: 5 ;font: monoid;
+            value: implementation d'un tracking du taux de saturation d’oxygène et du rythme cardiaque à partir d'un capteur d'oxymetrie non invasif."
+        "
+        event-set__enter="_event: mouseenter; text.value: implementation of the tracking of the oxygen rate and the heart ratewith an oxymeter device."
+        event-set__leave="_event: mouseleave; text.value: implementation d'un tracking du taux de saturation d’oxygène et du rythme cardiaque à partir d'un capteur d'oxymetrie non invasif." 
+        ></a-entity>
+    </a-entity>
+    <a-entity
+        position="6 1 -45">
+        <a-image src="#seg" position="0 0 0" width="3" height="4" ></a-image>
+        <a-entity
+position ="0 -1.5 0"
+material="color: #000000; emissive: #000000; opacity: 0"
+geometry="primitive: plane; width: auto; height: auto"
+text="color: #8cff00; width: 5 ;font: monoid;
+        value: segmentation d' image cérébrale irm axiales t2"
+        event-set__enter="_event: mouseenter; text.value: segmentation of an mri brain t2 axial image "
+        event-set__leave="_event: mouseleave; text.value:  segmentation d'image cérébrale irm axiales t2"
+            ></a-entity>
+    </a-entity>
+    <a-entity
+        position="13 1 -45">
+        <a-image src="#gameth" position="0 1 0" width="3" height="2.6" ></a-image>
+        <a-entity
+        position ="0 -1.5 0"
+        material="color: #000000; emissive: #000000; opacity: 0"
+geometry="primitive: plane; width: auto; height: auto"
+        text="color: #8cff00; width: 5 ;font: monoid;
+        value: implementation d'un code python pour predire la propagation des cellules tumorales\nsur un plan 2d sur base de la theorie des jeux et le jeu de la vie de conway"
+        event-set__enter="_event: mouseenter; text.value: design of a python code to predict the propagation of tumoral cells \non a 2d plan based on game theory and game of life "
+        event-set__leave="_event: mouseleave; text.value:  implementation d'un code python pour predire la propagation des cellules tumorales\nsur un plan 2d sur base de la theorie des jeux et le jeu de la vie de conway"
+        ></a-entity>
+    </a-entity>
+</a-entity>
+ <!--Crea-->
+
+ <a-entity        
+ material="color: #000000; emissive: #000000; opacity: 0"
+ scale="2 2 2"
+ position="17 1 -45"
+ geometry="primitive: plane; width: 1; height: auto"
+ text="color: #8cff00; align: center; width:5 ;font: monoid;
+ value: ______
+       | >   |
+       –------                   
+    "
+ event-set__tarcol="_event: click; _target: #biopro; visible: false"
+ event-set__dis="_event: click; _target: #trans; position: -5 2.906 -58"
+ event-set__diss="_event: click;  visible: false"
+ ></a-entity>
+
+
+
+
+
+
+
+<a-entity id="creasoc">
+        <a-entity
+        id="crea"
+        material="color: #000000; emissive: #000000; opacity: 0"
+        position="-5 2.906 -55"
+        geometry="primitive: plane; width: 5; height: auto"
+        text="color: #8cff00; align: center; width: 5 ;font: monoid;
+        value: creativite & sociale"
+        event-set__enter="_event: mouseenter; text.value: creativity & social"
+        event-set__leave="_event: mouseleave; text.value: creativite & sociale" ></a-entity>
+        
+        <a-entity
+        
+        position="-5 1 -55">
+        
+        <a-entity
+        position ="0 -1 0"
+        material="color: #000000; emissive: #000000; opacity: 0"
+        geometry="primitive: plane; width: auto; height: auto"
+        text="color: #8cff00; width: 5 ;font: monoid;
+                value: quelques projets blender
+                    "
+        event-set__enter="_event: mouseenter; text.value: some blender projects"
+        event-set__leave="_event: mouseleave; text.value: quelques projets blender"></a-entity>
+    </a-entity>
+
+    <a-entity
+        
+    position="0 1 -55">
+    <a-image src="#com1"  position="-1.423 0.521 -0.754" width="3" height="2.25" ></a-image>
+    <a-image src="#com2"  position="0 2.800 -0.754"  width="4" height="2.6" ></a-image>
+    <a-image src="#com3"  position="1.864 0 -0.756"  width="4" height="2.6" ></a-image>
+    <a-entity
+    position ="0 -1 0"
+    material="color: #000000; emissive: #000000; opacity: 0"
+    geometry="primitive: plane; width: auto; height: auto"
+    text="color: #8cff00; width: 5 ;font: monoid;
+            value: responsable scenographe, costumes et bruitages pour le theatre imperial de compiegne (1 an).\n responsable d'une equipe de 20 personnes.
+                "
+    event-set__enter="_event: mouseenter; text.value: scenograph, costume and noises design for the theatre imperial de compiegne (1 year).\n head of 20 students."
+    event-set__leave="_event: mouseleave; text.value: responsable scenographe, costumes et bruitages pour le theatre imperial de compiegne (1 an).\n responsable d'une equipe de 20 personnes."></a-entity>
+</a-entity>
+
+        
+<a-entity
+        
+position="8 1 -55">
+<a-image position="0 1 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 30000" src="#if" position="0 0 0" width="5" height="1.8" ></a-image>
+<a-entity
+position ="0 -1 0"
+material="color: #000000; emissive: #000000; opacity: 0"
+geometry="primitive: plane; width: auto; height: auto"
+text="color: #8cff00; width: 5 ;font: monoid;
+        value: membre de l'equipe scenographie et direction artistique de l'imaginarium festival 2018.\nfestival etudiant regroupant 12 000 personnes.
+            "
+    event-set__enter="_event: mouseenter; text.value: membre of the scenographic and artistic design of the imaginarium festival 2018.\n student festival which gathers 12 000 people."
+    event-set__leave="_event: mouseleave; text.value:  membre de l'equipe scenographie et direction artistique de l'imaginarium festival 2018.\nfestival etudiant regroupant 12 000 personnes"></a-entity>
+</a-entity>
+        
+<a-entity
+        
+position="15 1 -55">
+
+<a-entity
+position ="0 0 0"
+material="color: #000000; emissive: #000000; opacity: 0"
+geometry="primitive: plane; width: auto; height: auto"
+text="color: #8cff00; width: 5 ;font: monoid;
+        value: responsable de l'equipe weekend (strasbourg et amsterdam) et evenements \n de esn compiegne en charge des etudiants etrangers.
+            "
+event-set__enter="_event: mouseenter; text.value: head of the weekend (amsterdam and strasbourg) and event team of esn compiegne in charge of welcoming foreign students."
+event-set__leave="_event: mouseleave; text.value:  responsable de l'equipe weekend (strasbourg et amsterdam) et evenements \n de esn compiegne en charge des etudiants etrangers"></a-entity>
+</a-entity>
+</a-entity>      
+        
+<a-entity        
+material="color: #000000; emissive: #000000; opacity: 0"
+scale="2 2 2"
+position="22 1 -55"
+geometry="primitive: plane; width: 1; height: auto"
+text="color: #8cff00; align: center; width:5 ;font: monoid;
+value: ______
+      | >   |
+      –------                   
+   "
+event-set__tarcol="_event: click; _target: #creasoc; visible: false"
+event-set__dis="_event: click; _target: #trans; position: -5 2.906 -68"
+event-set__diss="_event: click;  visible: false"
+></a-entity>     
+        
+        
+        
+        
+        <!-- Hobbies-->
+        
+        <a-entity
+        id="hobbies"
+        material="color: #000000; emissive: #000000; opacity: 0"
+          position="0 1 -65"
+          geometry="primitive: plane; width: 5; height: auto"
+          text="color: #8cff00; width: 5 ; align: center; font: monoid;
+                value: quelques hobbies:\n boxe \n musique \n art \n opera \n surf \n scenographie \n code creatif"
+        event-set__enter="_event: mouseenter; text.value: some hobbies:\n boxe \n music \n art \n opera \n surf \n scenography \n creative coding "
+event-set__leave="_event: mouseleave; text.value:  quelques hobbies:\n boxe \n musique \n art \n opera \n surf \n scenographie \n code creatif">
+        </a-entity>
+
+        <a-entity        
+        material="color: #000000; emissive: #000000; opacity: 0"
+        scale="2 2 2"
+        position="5 1 -65"
+        geometry="primitive: plane; width: 1; height: auto"
+        text="color: #8cff00; align: center; width:5 ;font: monoid;
+        value: ______
+              | >   |
+              –------                   
+           "
+        event-set__tarcol="_event: click; _target: #hobbies; visible: false"
+        event-set__dis="_event: click; _target: #trans; position: -5 2.906 -78"
+        event-set__diss="_event: click;  visible: false"
+        ></a-entity>   
+
+         <!-- projets-->
+        <a-entity
+        id="future"
+        material="color: #000000; emissive: #000000; opacity: 0"
+      
+          position="0 2 -75"
+          geometry="primitive: plane; width: 5; height: auto"
+          text="color: #8cff00; width: 5 ;  font: monoid;
+                value: quelques projet futurs: \n -codingame gackathon: 6 mai \n-apprendre threejs \n -s'ameliorer sur unity \n-faire une experience artistique vr \n-faire un jeu en ascii \n-apprendre un jour le piano \n-faire une application impliquee dans l'ecologie marine"
+                event-set__enter="_event: mouseenter; text.value: \n -CodinGame Hackathon: 6 may \n-apprendre ThreeJs \n - get better at unity \n-make an artistic vr experience \n-make an ascii art game \n-learn one day piano \n- make an application for marin ecology "
+                event-set__leave="_event: mouseleave; text.value:  quelques projet futurs: \n -codingame gackathon: 6 mai \n-apprendre threejs \n -s'ameliorer sur unity \n-faire une experience artistique vr \n-faire un jeu en ascii \n-apprendre un jour le piano \n-faire une application impliquee dans l'ecologie marine"   
+                >
+        </a-entity>
+
+        <a-entity        
+        material="color: #000000; emissive: #000000; opacity: 0"
+        scale="2 2 2"
+        position="5 1 -75"
+        geometry="primitive: plane; width: 1; height: auto"
+        text="color: #8cff00; align: center; width:5 ;font: monoid;
+        value: ______
+              | >   |
+              –------                   
+           "
+        event-set__tarcol="_event: click; _target: #future; visible: false"
+        event-set__dis="_event: click; _target: #trans; position: -5 2.906 -88"
+        event-set__diss="_event: click;  visible: false"
+        ></a-entity> 
+       
+<!-- Lumiere-->
+        <a-entity
+        id="contact"
+        material="color: #000000; emissive: #000000; opacity: 0"
+      
+          position="0 2 -85"
+          geometry="primitive: plane; width: 5; height: auto"
+          text="color: #8cff00; width: 5 ;  font: monoid;
+                value: contact: ines.how.choong@hotmail.fr (favoris) \n0618 29 44 43\n linkedin: ines how-choong"
+                event-set__enter="_event: mouseenter; text.value: contact: ines.how.choong@hotmail.fr (favorite) \n0618 29 44 43\n linkedin: ines how-choong "
+                event-set__leave="_event: mouseleave; text.value: contact: ines.how.choong@hotmail.fr (favoris) \n0618 29 44 43\n linkedin: ines how-choong"
+                >
+        </a-entity>
+
+        <a-entity        
+        material="color: #000000; emissive: #000000; opacity: 0"
+        scale="2 2 2"
+        position="3 2 -85"
+        geometry="primitive: plane; width: 1; height: auto"
+        text="color: #8cff00; align: center; width:5 ;font: monoid;
+        value: ______
+              | >   |
+              –------                   
+           "
+        event-set__tarcol="_event: click; _target: #contact; visible: false"
+        event-set__dis="_event: click; _target: #trans; position: -5 2.906 -98"
+        event-set__diss="_event: click;  visible: false"
+        ></a-entity> 
+
+        <a-entity
+        id="bye"
+        material="color: #000000; emissive: #000000; opacity: 0"
+      scale="3 3 3"
+          position="0 2 -95"
+          geometry="primitive: plane; width: 5; height: auto"
+          text="color: #8cff00; width: 5 ;  font: monoid;
+                value: merci de votre attention! au revoir!\n\n
+                _______
+                |.-----.|
+                ||x . x||
+                ||_.-._||
+                `--)-(--`
+               __[=== o]___
+              |:::::::::::|\
+              `-=========-`() "
+              event-set__enter="_event: mouseenter; text.value:thank you for your attention! bye!\n\n
+              _______
+              |.-----.|
+              ||x . x||
+              ||_.-._||
+              `--)-(--`
+             __[=== o]___
+            |:::::::::::|\
+            `-=========-`()  "
+              event-set__leave="_event: mouseleave; text.value:merci de votre attention! au revoir!\n\n
+              _______
+              |.-----.|
+              ||x . x||
+              ||_.-._||
+              `--)-(--`
+             __[=== o]___
+            |:::::::::::|\
+            `-=========-`() "
+                >
+        
+        </a-entity>
+        
+<!-- Lumiere-->
+<a-entity light="type: ambient; intensity: 0 color: #BBB"></a-entity>
+
+<!-- Lumiere rouge centre-->
+
+        </a-scene>
+    </body>
+</html>
