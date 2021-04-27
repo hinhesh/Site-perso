@@ -86,7 +86,12 @@
                 value:  bonjour ami.\ncommencons?"
         shadow="cast: true"
             event-set__enter="_event: mouseenter; text.value: hello friend.\nshall we start?"
-            event-set__leave="_event: mouseleave; text.value: bonjour ami.\ncommencons?" 
+            event-set__leave="_event: mouseleave; text.value: bonjour ami.\ncommencons?"
+            animation="property: object3D.position.y;
+            to: 2.3; 
+            dir: alternate; 
+            dur: 2000; 
+            loop: true"
             >
         </a-entity>
         <a-entity        
@@ -121,12 +126,18 @@
                  je suis nee et grandit a l'ile de la reunion en plein ocean indien.\n 
                  je suis actuellement basee entre paris et la reunion mais voyageuse dans l'ame, je suis prete a l'aventure.
                  je recherche actuellement un stage de 6 mois pour septembre 2021. " 
+                 animation="property: object3D.position.y;
+                 to: 3.3; 
+                 dir: alternate; 
+                 dur: 3000; 
+                 loop: true"
               >
         </a-entity>
         
         <a-entity        
         material="color: #000000; emissive: #000000; opacity: 0"
-        position="4.607 0 -15"
+        position="4.607 1 -15"
+        scale="2 2 2"
         geometry="primitive: plane; width: 1; height: auto"
         text="color: #8cff00; align: center; width:5 ;font: monoid;
         value: ______
@@ -153,7 +164,12 @@
         event-set__enter="_event: mouseenter; text.value: utc : universite de technologie de compiegne\n type: engineering university.\nperiod: 2015 - today.\ndegree: biology/biomedical engineer.\n\n minor: phiteco (philosophy, technologies and cognition) & tcn (digital cultural technologies).\n\n fields: biology, maths, computer science, electronics."
         event-set__leave="_event: mouseleave; text.value: utc: universite de technologie de compiegne.\n type: ecole d'ingenieur \ndate: 2015 - auj.\n
         diplome: ingenieur biologique/biomedical\nmineur: phiteco (philosphie, technologies et cognition) & tcn (technologies culturelles numeriques).\n 
-        domaine: biologie, mathematique, informatique, electronique">
+        domaine: biologie, mathematique, informatique, electronique"
+        animation="property: object3D.position.x;
+        to: -4.2; 
+        dir: alternate; 
+        dur: 2000; 
+        loop: true">
         </a-entity>
      
         
@@ -171,12 +187,18 @@
         event-set__leave="_event: mouseleave; text.value:Ecole 42\n type: ecole alternative peer to peer.
         date: 2020 - auj \n\n diplome: architechte en technologie numerique 
         \n\n domaine: informatique, innovation, entreprenariat 
-            "></a-entity>
+            "
+            animation="property: object3D.position.x;
+            to: 4.2; 
+            dir: alternate; 
+            dur: 4000; 
+            loop: true"></a-entity>
 
     
             <a-entity        
             material="color: #000000; emissive: #000000; opacity: 0"
             position="3.270 -0.142 -30"
+            scale="2 2 2"
             geometry="primitive: plane; width: 1; height: auto"
             text="color: #8cff00; align: center; width:5 ;font: monoid;
             value: ______
@@ -206,7 +228,11 @@
         event-set__enter="_event: mouseenter; text.value: Computer Science"
         event-set__leave="_event: mouseleave; text.value: Informatique" ></a-entity>
         <a-entity
-        
+        animation="property: object3D.position.y;
+        to: 1.2; 
+        dir: alternate; 
+        dur: 2000; 
+        loop: true"
         position="-5 1 -35">
         <a-image src="#minishell" position="0 0 0" width="3" height="2.25" ></a-image>
         <a-entity
@@ -217,10 +243,15 @@
                 value: coder un minishell en langage c (en cours)
                     "
         event-set__enter="_event: mouseenter; text.value: program a minishell in C (on going)"
-        event-set__leave="_event: mouseleave; text.value: coder un minishell en langage c (en cours) " ></a-entity>
+        event-set__leave="_event: mouseleave; text.value: coder un minishell en langage c (en cours) " 
+        ></a-entity>
     </a-entity>
     <a-entity
-
+    animation="property: object3D.position.y;
+    to: 1.2; 
+    dir: alternate; 
+    dur: 4000; 
+    loop: true"
     position="0 1 -35"
     >
 
@@ -240,7 +271,11 @@
                 ></a-entity>
             </a-entity>
         <a-entity
-        
+        animation="property: object3D.position.y;
+        to:  0.98; 
+        dir: alternate; 
+        dur: 3000; 
+        loop: true"
     position="7 1 -35"
     >
 
@@ -259,7 +294,11 @@
     ></a-entity>
 
 <a-entity
-
+animation="property: object3D.position.y;
+to: 1.2; 
+dir: alternate; 
+dur: 1000; 
+loop: true"
 position="13 1 -35">
 <a-image position="0 1 0" src="#rt" position="0 0 0" width="4" height="3.2" ></a-image>
 <a-entity
@@ -275,7 +314,11 @@ event-set__leave="_event: mouseleave; text.value: coder un logiciel de raytracin
 </a-entity>
 
 <a-entity
-
+animation="property: object3D.position.y;
+to: 1.2; 
+dir: alternate; 
+dur: 7000; 
+loop: true"
 position="18 1 -35">
 <a-image position="0 1 0" src="#printf" position="0 0 0" width="4" height="0.5" ></a-image>
 <a-entity
@@ -320,7 +363,12 @@ event-set__diss="_event: click;  visible: false"
         ></a-entity>
     
         <a-entity
-        
+        animation="property: object3D.rotation.y;
+        to: 10; 
+        dir: alternate; 
+        dur: 4000; 
+        loop: true"
+
         position="-5 1 -45">
         <a-image src="#AFM" position="0 0 0" width="3" height="2.25" ></a-image>
         <a-entity
@@ -340,6 +388,11 @@ event-set__diss="_event: click;  visible: false"
            "></a-entity>
         </a-entity>
     <a-entity
+    animation="property: object3D.position.y;
+    to: 1.4; 
+    dir: alternate; 
+    dur: 2000; 
+    loop: true"
         position="0 1 -45">
         <a-entity
         material="color: #000000; emissive: #000000; opacity: 0"
@@ -353,6 +406,11 @@ event-set__diss="_event: click;  visible: false"
         ></a-entity>
     </a-entity>
     <a-entity
+    animation="property: object3D.position.x;
+    to: 6.2; 
+    dir: alternate; 
+    dur: 2000; 
+    loop: true"
         position="6 1 -45">
         <a-image src="#seg" position="0 0 0" width="3" height="4" ></a-image>
         <a-entity
@@ -366,6 +424,11 @@ text="color: #8cff00; width: 5 ;font: monoid;
             ></a-entity>
     </a-entity>
     <a-entity
+    animation="property: object3D.position.z;
+    to: -44; 
+    dir: alternate; 
+    dur: 3000; 
+    loop: true"
         position="13 1 -45">
         <a-image src="#gameth" position="0 1 0" width="3" height="2.6" ></a-image>
         <a-entity
@@ -404,6 +467,7 @@ geometry="primitive: plane; width: auto; height: auto"
 
 <a-entity id="creasoc">
         <a-entity
+        
         id="crea"
         material="color: #000000; emissive: #000000; opacity: 0"
         position="-5 2.906 -55"
@@ -414,7 +478,11 @@ geometry="primitive: plane; width: auto; height: auto"
         event-set__leave="_event: mouseleave; text.value: creativite & sociale" ></a-entity>
         
         <a-entity
-        
+        animation="property: object3D.rotation.y;
+        to: -15
+        dir: alternate; 
+        dur: 8000; 
+        loop: true"
         position="-5 1 -55">
         
         <a-entity
@@ -429,7 +497,11 @@ geometry="primitive: plane; width: auto; height: auto"
     </a-entity>
 
     <a-entity
-        
+    animation="property: object3D.position.y;
+    to: 1.2; 
+    dir: alternate; 
+    dur: 6000; 
+    loop: true"
     position="0 1 -55">
     <a-image src="#com1"  position="-1.423 0.521 -0.754" width="3" height="2.25" ></a-image>
     <a-image src="#com2"  position="0 2.800 -0.754"  width="4" height="2.6" ></a-image>
@@ -447,7 +519,11 @@ geometry="primitive: plane; width: auto; height: auto"
 
         
 <a-entity
-        
+animation="property: object3D.position.y;
+to: 0.90; 
+dir: alternate; 
+dur: 7000; 
+loop: true"
 position="8 1 -55">
 <a-image position="0 1 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 30000" src="#if" position="0 0 0" width="5" height="1.8" ></a-image>
 <a-entity
@@ -462,7 +538,11 @@ text="color: #8cff00; width: 5 ;font: monoid;
 </a-entity>
         
 <a-entity
-        
+animation="property: object3D.position.z;
+to: -54; 
+dir: alternate; 
+dur: 5000; 
+loop: true"     
 position="15 1 -55">
 
 <a-entity
@@ -498,6 +578,11 @@ event-set__diss="_event: click;  visible: false"
         <!-- Hobbies-->
         
         <a-entity
+        animation="property: object3D.rotation.y;
+        to: 30; 
+        dir: alternate; 
+        dur: 8000; 
+        loop: true"
         id="hobbies"
         material="color: #000000; emissive: #000000; opacity: 0"
           position="0 1 -65"
@@ -525,6 +610,11 @@ event-set__leave="_event: mouseleave; text.value:  quelques hobbies:\n boxe \n m
 
          <!-- projets-->
         <a-entity
+        animation="property: object3D.position.y;
+        to: 2.2; 
+        dir: alternate; 
+        dur: 7000; 
+        loop: true"
         id="future"
         material="color: #000000; emissive: #000000; opacity: 0"
       
@@ -555,6 +645,11 @@ event-set__leave="_event: mouseleave; text.value:  quelques hobbies:\n boxe \n m
 <!-- Lumiere-->
         <a-entity
         id="contact"
+        animation="property: object3D.position.y;
+        to: 2.2; 
+        dir: alternate; 
+        dur: 7000; 
+        loop: true"
         material="color: #000000; emissive: #000000; opacity: 0"
       
           position="0 2 -85"
@@ -577,15 +672,20 @@ event-set__leave="_event: mouseleave; text.value:  quelques hobbies:\n boxe \n m
               –------                   
            "
         event-set__tarcol="_event: click; _target: #contact; visible: false"
-        event-set__dis="_event: click; _target: #trans; position: -5 2.906 -98"
+        event-set__dis="_event: click; _target: #trans; position: -5 2.906 -130"
         event-set__diss="_event: click;  visible: false"
         ></a-entity> 
 
         <a-entity
         id="bye"
+        animation="property: object3D.position.y;
+        to: 2.4; 
+        dir: alternate; 
+        dur: 1000; 
+        loop: true"
         material="color: #000000; emissive: #000000; opacity: 0"
       scale="3 3 3"
-          position="0 2 -95"
+          position="0 2 -100"
           geometry="primitive: plane; width: 5; height: auto"
           text="color: #8cff00; width: 5 ;  font: monoid;
                 value: merci de votre attention! au revoir!\n\n
